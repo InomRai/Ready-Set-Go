@@ -1,0 +1,31 @@
+
+========== DELI-cious RECEIPT ==========
+Sandwich: Custom Sandwich
+Bread: WHITE ($5.5)
+Size Price: $7.0
+Meats:
+  - HAM ($1.0)
+  - CHICKEN ($1.0)
+  - BACON ($1.0)
+  - CHICKEN ($1.0)
+Cheeses:
+  - AMERICAN ($0.75)
+Toppings:
+  - LETTUCE ($0.0)
+  - PEPPERS ($0.0)
+  - ONIONS ($0.0)
+Toasted: Yes
+Total Sandwich Price: $17.25
+----------------------------------------
+Drink: Custom Drink
+Size: MEDIUM
+Flavor: Coca Cola
+Total Price: $2.5
+----------------------------------------
+Chips: Custom Chips
+Type: BBQ
+Total Price: $1.5
+----------------------------------------
+TOTAL: $21.25
+========================================
+Thank you for dining with us!
