@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.beverage;
 
 public class DrinkSize {
     public static final DrinkSize SMALL = new DrinkSize("SMALL", 2.00);

@@ -1,6 +1,10 @@
-package com.pluralsight;
+package com.pluralsight.App;
 
-import com.pluralsight.beverage.Drink;
+import com.pluralsight.Subs.MeatType;
+import com.pluralsight.Subs.Menu;
+import com.pluralsight.Subs.RegularTopping;
+import com.pluralsight.Subs.Sandwich;
+import com.pluralsight.beverage.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +50,7 @@ public class GetsetGo {
                     break;
 
                 case 0:
-                    System.out.println("Thank you for using the DELI-cious POS System!");
+                    System.out.println("Thank you for using the GetsetGo System!");
                     continueOrdering = false;
                     break;
 
@@ -81,22 +85,7 @@ public class GetsetGo {
         System.out.print("Enter choice: ");
         int sizeChoice = scanner.nextInt();
         scanner.nextLine();
-        double sizePrice;
-
-        switch (sizeChoice) {
-            case 1:
-                sizePrice = 5.50;
-                break;
-            case 2:
-                sizePrice = 7.00;
-                break;
-            case 3:
-                sizePrice = 8.50;
-                break;
-            default:
-                System.out.println("Invalid choice. Defaulting to 8 inch.");
-                sizePrice = 7.00;
-        }
+        double sizePrice = 0.0;
 
         Sandwich sandwich = new Sandwich("Custom Sandwich", bread, sizePrice);
 
@@ -113,10 +102,24 @@ public class GetsetGo {
             sandwich.addMeat(MeatType.values()[index]);
         }
 
-        //ask user if they want extra meet
+        // Determine extra meat charge based on sandwich size
+        double extraMeatCharge = 0.0;
         System.out.print("Would you like to add extra meat? (yes/no): ");
         String extraMeatChoice = scanner.nextLine();
         if (extraMeatChoice.equalsIgnoreCase("yes")) {
+            switch (sizeChoice) {
+                case 1: // 4 inch
+                    extraMeatCharge = 0.50;
+                    break;
+                case 2: // 8 inch
+                    extraMeatCharge = 1.00;
+                    break;
+                case 3: // 12 inch
+                    extraMeatCharge = 1.50;
+                    break;
+            }
+
+            System.out.printf("Extra meat added. An additional $%.2f has been charged.%n", extraMeatCharge);
             System.out.print("Enter extra meat choices (comma separated): ");
             String[] extraMeats = scanner.nextLine().split(",");
             for (String choice : extraMeats) {
@@ -125,25 +128,35 @@ public class GetsetGo {
             }
         }
 
-
-        // Cheeses
-        System.out.println("Select cheeses to add:");
+        System.out.println("Select cheese to add:");
         for (int i = 0; i < CheeseType.values().length; i++) {
             CheeseType cheese = CheeseType.values()[i];
             System.out.println((i + 1) + ") " + cheese.getName() + " ($" + cheese.getPrice() + ")");
         }
-        System.out.print("Enter cheese choices (comma separated): ");
+        System.out.print("Enter meat choices (comma separated): ");
         String[] cheeseChoices = scanner.nextLine().split(",");
         for (String choice : cheeseChoices) {
             int index = Integer.parseInt(choice.trim()) - 1;
             sandwich.addCheese(CheeseType.values()[index]);
         }
 
-
-        // Ask if user wants extra cheese
+        double extraCheeseCharge = 0.0;
         System.out.print("Would you like to add extra cheese? (yes/no): ");
         String extraCheeseChoice = scanner.nextLine();
         if (extraCheeseChoice.equalsIgnoreCase("yes")) {
+            switch (sizeChoice) {
+                case 1: // 4 inch
+                    extraCheeseCharge = 0.30;
+                    break;
+                case 2: // 8 inch
+                    extraCheeseCharge = 0.60;
+                    break;
+                case 3: // 12 inch
+                    extraCheeseCharge = 0.90;
+                    break;
+            }
+
+            System.out.printf("Extra cheese added. An additional $%.2f has been charged.%n", extraCheeseCharge);
             System.out.print("Enter extra cheese choices (comma separated): ");
             String[] extraCheeses = scanner.nextLine().split(",");
             for (String choice : extraCheeses) {
@@ -199,14 +212,14 @@ public class GetsetGo {
 
     private static Chips createChips(Scanner scanner) {
         System.out.println("\nSelect chip type:");
-        for (int i = 0; i < ChipType.values().length; i++) {
-            ChipType chip = ChipType.values()[i];
+        for (int i = 0; i < Chips.ChipType.values().length; i++) {
+            Chips.ChipType chip = Chips.ChipType.values()[i];
             System.out.println((i + 1) + ") " + chip.getName() + " ($" + chip.getPrice() + ")");
         }
         System.out.print("Enter choice: ");
         int choice = scanner.nextInt();
         scanner.nextLine();
-        ChipType type = ChipType.values()[choice - 1];
+        Chips.ChipType type = Chips.ChipType.values()[choice - 1];
 
         return new Chips("Custom Chips", type);
     }

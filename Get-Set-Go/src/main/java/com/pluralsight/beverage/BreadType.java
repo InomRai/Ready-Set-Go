@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.beverage;
 
 
 public class BreadType {

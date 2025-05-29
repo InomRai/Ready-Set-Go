@@ -1,7 +1,6 @@
 package com.pluralsight.beverage;
 
-import com.pluralsight.DrinkSize;
-import com.pluralsight.Menu;
+import com.pluralsight.Subs.Menu;
 
 public class Drink extends Menu {
     private DrinkSize size;

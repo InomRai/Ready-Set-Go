@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.Subs;
 
 public abstract class Menu {
     private String name;

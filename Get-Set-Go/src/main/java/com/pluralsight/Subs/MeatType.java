@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.Subs;
 
 public class MeatType {
     public static final MeatType STEAK = new MeatType("STEAK", 1.00);
@@ -7,6 +7,7 @@ public class MeatType {
     public static final MeatType ROAST_BEEF = new MeatType("ROAST_BEEF", 1.00);
     public static final MeatType CHICKEN = new MeatType("CHICKEN", 1.00);
     public static final MeatType BACON = new MeatType("BACON", 1.00);
+
 
     private final String name;
     private final double price;

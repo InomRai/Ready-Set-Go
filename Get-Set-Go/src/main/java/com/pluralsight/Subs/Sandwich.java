@@ -1,4 +1,7 @@
-package com.pluralsight;
+package com.pluralsight.Subs;
+
+import com.pluralsight.beverage.BreadType;
+import com.pluralsight.beverage.CheeseType;
 
 import java.util.ArrayList;
 import java.util.List;

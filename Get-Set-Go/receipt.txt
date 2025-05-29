@@ -1,31 +1,27 @@
 
-========== DELI-cious RECEIPT ==========
+========== Get set Go ==========
 Sandwich: Custom Sandwich
-Bread: WHITE ($5.5)
-Size Price: $7.0
+Bread: com.pluralsight.beverage.BreadType@2e817b38 ($5.5)
+Size Price: $0.0
 Meats:
-  - HAM ($1.0)
-  - CHICKEN ($1.0)
-  - BACON ($1.0)
-  - CHICKEN ($1.0)
+  - com.pluralsight.Subs.MeatType@17f052a3 ($1.0)
+  - com.pluralsight.Subs.MeatType@17f052a3 ($1.0)
 Cheeses:
-  - AMERICAN ($0.75)
+  - com.pluralsight.beverage.CheeseType@2e0fa5d3 ($0.75)
 Toppings:
-  - LETTUCE ($0.0)
-  - PEPPERS ($0.0)
-  - ONIONS ($0.0)
+  - com.pluralsight.Subs.RegularTopping@5010be6 ($0.0)
 Toasted: Yes
-Total Sandwich Price: $17.25
+Total Sandwich Price: $8.25
 ----------------------------------------
 Drink: Custom Drink
-Size: MEDIUM
-Flavor: Coca Cola
+Size: com.pluralsight.beverage.DrinkSize@685f4c2e
+Flavor: Pepsi
 Total Price: $2.5
 ----------------------------------------
 Chips: Custom Chips
-Type: BBQ
+Type: com.pluralsight.beverage.Chips$ChipType@7daf6ecc
 Total Price: $1.5
 ----------------------------------------
-TOTAL: $21.25
+TOTAL: $12.25
 ========================================
 Thank you for dining with us!

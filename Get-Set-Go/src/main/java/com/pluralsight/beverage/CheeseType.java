@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.beverage;
 
 public class CheeseType {
     public static final CheeseType AMERICAN = new CheeseType("AMERICAN", 0.75);
