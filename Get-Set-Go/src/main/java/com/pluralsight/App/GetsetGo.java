@@ -187,30 +187,50 @@ public class GetsetGo {
     }
 
     private static Drink createDrink(Scanner scanner) {
-        System.out.println("\nSelect drink size:");
-        for (int i = 0; i < DrinkSize.values().length; i++) {
-            DrinkSize size = DrinkSize.values()[i];
-            System.out.println((i + 1) + ") " + size.getName() + " ($" + size.getPrice() + ")");
-        }
-        System.out.print("Enter choice: ");
-        int sizeChoice = scanner.nextInt();
-        scanner.nextLine();
-        DrinkSize size = DrinkSize.values()[sizeChoice - 1];
+        // Ask if the user wants to add a drink
+        System.out.print("Would you like to add a drink to your order? (yes/no): ");
+        String addDrinkResponse = scanner.nextLine().trim().toLowerCase();
 
-        System.out.println("Select drink flavor:");
-        String[] flavors = {"Coca Cola", "Sprite", "Mountain Dew", "Pepsi", "Red Bull"};
-        for (int i = 0; i < flavors.length; i++) {
-            System.out.println((i + 1) + ") " + flavors[i]);
-        }
-        System.out.print("Enter choice: ");
-        int flavorChoice = scanner.nextInt();
-        scanner.nextLine();
-        String flavor = flavors[Math.max(0, Math.min(flavorChoice - 1, flavors.length - 1))];
+        // If the user wants a drink, proceed with drink selection
+        if (addDrinkResponse.equals("yes")) {
+            System.out.println("\nSelect drink size:");
+            for (int i = 0; i < DrinkSize.values().length; i++) {
+                DrinkSize size = DrinkSize.values()[i];
+                System.out.println((i + 1) + ") " + size.getName() + " ($" + size.getPrice() + ")");
+            }
+            System.out.print("Enter choice: ");
+            int sizeChoice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            DrinkSize size = DrinkSize.values()[sizeChoice - 1];
 
-        return new Drink("Custom Drink", size, flavor);
+            System.out.println("Select drink flavor:");
+            String[] flavors = {"Coca Cola", "Sprite", "Mountain Dew", "Pepsi", "Red Bull"};
+            for (int i = 0; i < flavors.length; i++) {
+                System.out.println((i + 1) + ") " + flavors[i]);
+            }
+            System.out.print("Enter choice: ");
+            int flavorChoice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            String flavor = flavors[Math.max(0, Math.min(flavorChoice - 1, flavors.length - 1))];
+
+            return new Drink("Custom Drink", size, flavor);
+        } else {
+            System.out.println("No drink added to your order.");
+            return null; // No drink added
+        }
     }
 
     private static Chips createChips(Scanner scanner) {
+        // Ask the user if they want chips
+        System.out.print("Would you like to add chips to your order? (yes/no): ");
+        String chipsChoice = scanner.nextLine();
+
+        // If the user doesn't want chips, return null or handle accordingly
+        if (!chipsChoice.equalsIgnoreCase("yes")) {
+            return null;
+        }
+
+        // If the user wants chips, proceed with the selection
         System.out.println("\nSelect chip type:");
         for (int i = 0; i < Chips.ChipType.values().length; i++) {
             Chips.ChipType chip = Chips.ChipType.values()[i];
@@ -218,19 +238,9 @@ public class GetsetGo {
         }
         System.out.print("Enter choice: ");
         int choice = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Consume newline character
         Chips.ChipType type = Chips.ChipType.values()[choice - 1];
 
         return new Chips("Custom Chips", type);
-    }
-
-    private static void displayOrderDetails(List<Menu> orderItems) {
-        System.out.println("\nOrder Details:");
-        double total = 0;
-        for (Menu item : orderItems) {
-            item.displayDetails();
-            total += item.getPrice();
-        }
-        System.out.printf("Total Order Price: $%.2f%n", total);
     }
 }
