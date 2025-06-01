@@ -1,32 +1,22 @@
 
 ========== Get set Go ==========
 Sandwich: Custom Sandwich
-Bread: com.pluralsight.beverage.BreadType@7e6cbb7a ($5.5)
+Bread: com.pluralsight.beverage.BreadType@7c3df479 ($5.5)
 Size Price: $0.0
 Meats:
-  - com.pluralsight.Subs.MeatType@179d3b25 ($1.0)
+  - HAM ($1.00) ($1.0)
 Cheeses:
-  - com.pluralsight.beverage.CheeseType@254989ff ($0.75)
+  - com.pluralsight.beverage.CheeseType@439f5b3d ($0.75)
 Toppings:
-  - com.pluralsight.Subs.RegularTopping@5d099f62 ($0.0)
-  - com.pluralsight.Subs.RegularTopping@37f8bb67 ($0.0)
-  - com.pluralsight.Subs.RegularTopping@49c2faae ($0.0)
-  - com.pluralsight.Subs.RegularTopping@20ad9418 ($0.0)
-  - com.pluralsight.Subs.RegularTopping@31cefde0 ($0.0)
-  - com.pluralsight.Subs.RegularTopping@439f5b3d ($0.0)
   - com.pluralsight.Subs.RegularTopping@1d56ce6a ($0.0)
 Toasted: No
 Total Sandwich Price: $7.25
 ----------------------------------------
 Drink: Custom Drink
-Size: com.pluralsight.beverage.DrinkSize@2e5d6d97
-Flavor: Pepsi
-Total Price: $2.5
+Size: com.pluralsight.beverage.DrinkSize@17f052a3
+Flavor: Sprite
+Total Price: $3.0
 ----------------------------------------
-Chips: Custom Chips
-Type: com.pluralsight.beverage.Chips$ChipType@238e0d81
-Total Price: $1.5
-----------------------------------------
-TOTAL: $11.25
+TOTAL: $10.25
 ========================================
 Thank you for dining with us!

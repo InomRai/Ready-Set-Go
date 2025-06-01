@@ -33,11 +33,15 @@ public class GetsetGo {
 
                     // Add drink
                     Drink drink = createDrink(scanner);
-                    orderItems.add(drink);
+                    if (drink != null) {
+                        orderItems.add(drink);
+                    }
 
                     // Add chips
                     Chips chips = createChips(scanner);
-                    orderItems.add(chips);
+                    if (chips != null) {
+                        orderItems.add(chips);
+                    }
 
                     // Print and save receipt
                     Receipt receipt = new Receipt(orderItems);
@@ -61,6 +65,7 @@ public class GetsetGo {
 
         scanner.close();
     }
+
 
     private static Sandwich createSandwich(Scanner scanner) {
         System.out.println("\nCreating a new sandwich...");
@@ -223,14 +228,21 @@ public class GetsetGo {
     private static Chips createChips(Scanner scanner) {
         // Ask the user if they want chips
         System.out.print("Would you like to add chips to your order? (yes/no): ");
-        String chipsChoice = scanner.nextLine();
+        String chipsChoice = scanner.nextLine().trim().toLowerCase();
 
-        // If the user doesn't want chips, return null or handle accordingly
-        if (!chipsChoice.equalsIgnoreCase("yes")) {
+        // Validate input
+        while (!chipsChoice.equals("yes") && !chipsChoice.equals("no")) {
+            System.out.println("Invalid input. Please enter 'yes' or 'no'.");
+            System.out.print("Would you like to add chips to your order? (yes/no): ");
+            chipsChoice = scanner.nextLine().trim().toLowerCase();
+        }
+
+        // If the user doesn't want chips, return null
+        if (chipsChoice.equals("no")) {
             return null;
         }
 
-        // If the user wants chips, proceed with the selection
+        // If the user wants chips, proceed with chip selection
         System.out.println("\nSelect chip type:");
         for (int i = 0; i < Chips.ChipType.values().length; i++) {
             Chips.ChipType chip = Chips.ChipType.values()[i];
@@ -238,7 +250,7 @@ public class GetsetGo {
         }
         System.out.print("Enter choice: ");
         int choice = scanner.nextInt();
-        scanner.nextLine(); // Consume newline character
+        scanner.nextLine(); // Consume the newline character left by nextInt()
         Chips.ChipType type = Chips.ChipType.values()[choice - 1];
 
         return new Chips("Custom Chips", type);

@@ -8,7 +8,6 @@ public class MeatType {
     public static final MeatType CHICKEN = new MeatType("CHICKEN", 1.00);
     public static final MeatType BACON = new MeatType("BACON", 1.00);
 
-
     private final String name;
     private final double price;
 
@@ -26,6 +25,11 @@ public class MeatType {
     }
 
     public static MeatType[] values() {
-        return new MeatType[] { STEAK, HAM, SALAMI, ROAST_BEEF, CHICKEN, BACON };
+        return new MeatType[]{STEAK, HAM, SALAMI, ROAST_BEEF, CHICKEN, BACON};
+    }
+
+    @Override
+    public String toString() {
+        return name + " ($" + String.format("%.2f", price) + ")";
     }
 }
