@@ -1,6 +1,5 @@
 package com.pluralsight.beverage;
 
-
 public class BreadType {
     public static final BreadType WHITE = new BreadType("WHITE", 5.50);
     public static final BreadType WHEAT = new BreadType("WHEAT", 5.50);
@@ -27,5 +26,10 @@ public class BreadType {
 
     public static BreadType[] values() {
         return values;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("BreadType{name='%s', price=%.2f}", name, price);
     }
 }

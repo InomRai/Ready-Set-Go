@@ -17,8 +17,6 @@ public class RegularTopping {
     public static final RegularTopping ThousandIsland = new RegularTopping("ThousandIsland", 0.00);
     public static final RegularTopping Vinaigrette = new RegularTopping("Vinaigrette", 0.00);
 
-
-
     private final String name;
     private final double price;
 
@@ -26,7 +24,6 @@ public class RegularTopping {
             LETTUCE, PEPPERS, ONIONS, TOMATOES,
             JALAPENOS, CUCUMBERS, PICKLES, GUACAMOLE, MUSHROOMS,
             Mustard, Mayo, Ketchup, Ranch, ThousandIsland, Vinaigrette
-
     };
 
     private RegularTopping(String name, double price) {
@@ -44,5 +41,10 @@ public class RegularTopping {
 
     public static RegularTopping[] values() {
         return values;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("RegularTopping{name='%s', price=%.2f}", name, price);
     }
 }

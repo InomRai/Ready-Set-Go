@@ -30,6 +30,6 @@ public class MeatType {
 
     @Override
     public String toString() {
-        return name + " ($" + String.format("%.2f", price) + ")";
+        return String.format("%s ($%.2f)", name, price);
     }
 }

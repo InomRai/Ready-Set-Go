@@ -26,4 +26,9 @@ public class DrinkSize {
     public static DrinkSize[] values() {
         return values;
     }
+
+    @Override
+    public String toString() {
+        return String.format("DrinkSize{name= %s, price=%.2f}", name, price);
+    }
 }

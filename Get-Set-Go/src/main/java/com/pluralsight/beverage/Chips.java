@@ -18,15 +18,15 @@ public class Chips extends Menu {
     }
 
     public static class ChipType {
-        public static final ChipType Lays = new ChipType("Lays", 1.50);
+        public static final ChipType LAYS = new ChipType("Lays", 1.50);
         public static final ChipType BBQ = new ChipType("BBQ", 1.50);
-        public static final ChipType HotCheetos= new ChipType("HotCheetos", 1.50);
-        public static final ChipType Doritos = new ChipType("Doritos", 1.50);
+        public static final ChipType HOT_CHEETOS = new ChipType("Hot Cheetos", 1.50);
+        public static final ChipType DORITOS = new ChipType("Doritos", 1.50);
 
         private final String name;
         private final double price;
 
-        private static final ChipType[] values = { Lays, BBQ, HotCheetos, Doritos };
+        private static final ChipType[] values = { LAYS, BBQ, HOT_CHEETOS, DORITOS };
 
         private ChipType(String name, double price) {
             this.name = name;
@@ -44,6 +44,10 @@ public class Chips extends Menu {
         public static ChipType[] values() {
             return values;
         }
+
+        @Override
+        public String toString() {
+            return String.format("%s ($%.2f)", name, price);
+        }
     }
 }
-

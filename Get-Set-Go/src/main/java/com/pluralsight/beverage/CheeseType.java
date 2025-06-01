@@ -27,4 +27,9 @@ public class CheeseType {
     public static CheeseType[] values() {
         return values;
     }
+
+    @Override
+    public String toString() {
+        return String.format("CheeseType{name= %s, price=%.2f}", name, price);
+    }
 }
