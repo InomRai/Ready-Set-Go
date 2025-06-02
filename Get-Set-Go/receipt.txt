@@ -1,29 +1,9 @@
 
 ========== Get set Go ==========
-Sandwich: Custom Sandwich
-Bread: BreadType{name='WHEAT', price=5.50} ($5.5)
-Size Price: $0.0
-Meats:
-  - STEAK ($1.00) ($1.0)
-  - HAM ($1.00) ($1.0)
-  - HAM ($1.00) ($1.0)
-Cheeses:
-  - CheeseType{name= PROVOLONE, price=0.75} ($0.75)
-  - CheeseType{name= SWISS, price=0.75} ($0.75)
-Toppings:
-  - RegularTopping{name='LETTUCE', price=0.00} ($0.0)
-Toasted: No
-Total Sandwich Price: $10.00
-----------------------------------------
-Drink: Custom Drink
-Size: DrinkSize{name='MEDIUM', price=2.50}
-Flavor: Sprite
-Total Price: $2.5
-----------------------------------------
 Chips: Custom Chips
-Type: BBQ ($1.50)
+Type: Lays ($1.50)
 Total Price: $1.5
 ----------------------------------------
-TOTAL: $14.00
+TOTAL: $1.50
 ========================================
 Thank you for dining with us!
